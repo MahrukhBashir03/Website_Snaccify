@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--=============== Favicon ===============-->
+    <link rel="shortcut icon" href="./images/icon1.png" type="image/png" />
+    <!--=============== Swiper CSS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!--=============== Boxicons ===============-->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--=============== Custom StyleSheet ===============-->
+    <link rel="stylesheet" href="./css/styles.css" />
+    
+    <title>Snaccify</title>
+    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/27/11/20250427113140-6WBP8M4L.js"></script>    
+  </head>
+  <body>
+    <!--=============== Header ===============-->
+    <header class="header">
+      <nav class="navbar">
+        <div class="row d-flex container">
+          <a href="" class="logo d-flex">
+            <img src="./images/logo.png" alt="" />
+          </a>
+
+          <ul class="nav-list d-flex">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#recipes">Food</a>
+            <a href="#testimonials">Reviews</a>
+            <!-- <a href="">Recipes</a> -->
+            <a href="#contact">Contact</a>
+            <span class="close d-flex"><i class="bx bx-x"></i></span>
+          </ul>
+
+          <div class="col d-flex">
+            <form>
+              <input type="search" placeholder="Search your item" />
+              <button class="d-flex"><i class="bx bx-search"></i></button>
+            </form>
+            <a href="cart.html" class="cart-icon d-flex">
+              <i class="bx bx-shopping-bag"></i>
+              <span id="cart-count">0</span>
+            </a>
+            
+            <a class="btn signin">Sign In</a>
+          </div>
+
+          <!-- Hamburger -->
+          <div class="hamburger d-flex">
+            <i class="bx bx-menu"></i>
+          </div>
+        </div>
+      </nav>
+      <div class="home__scroll">
+        <a href="#about" class="home__scroll-link"
+          ><i class="bx bx-up-arrow-alt"></i>Scroll</a
+        >
+      </div>
+      <!--=============== Home ===============-->
+      <div class="home" id="home">
+        <div class="row container">
+          <div class="col">
+            <div class="faster">
+              More than Faster
+              <div class="image d-flex">
+                <img src="./images/icon1.png" alt="" />
+              </div>
+            </div>
+            <h1>
+              Get your cuisine <br />
+              delivered right to <br />
+              <span class="color">your door</span>
+            </h1>
+            <p>
+              Food that is delivered at the right time. The trendy food delivery
+              partner. Good food is what we deliver. Your hunger companion.
+            </p>
+            <a href="" class="btn">Explore Food</a>
+          </div>
+          <div class="col">
+            <img src="./images/homeimg.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!--=============== SignIn Form ===============-->
+      <div class="wrapper">
+        <form action="" class="form">
+          <h2>SIGN IN</h2>
+
+          <div class="control">
+            <label for="">Enter Email:</label>
+            <input type="email" placeholder="Enter Your Email" />
+          </div>
+          <div class="control">
+            <label for="">Password:</label>
+            <input type="password" placeholder="Password" />
+          </div>
+          <div class="checkbox d-flex">
+            <input type="checkbox" />
+            <span>Remember Me</span>
+          </div>
+          <button class="btn">Sign In</button>
+          <div class="links">
+            <span>Forgot Password? <a href="">Click Here</a></span>
+            <span>Don't Have An Account? <a href="">Create One</a></span>
+          </div>
+        </form>
+
+        <div class="close-form">
+          <i class="bx bx-x"></i>
+        </div>
+      </div>
+    </header>
+
+    <!--=============== Services ===============-->
+    <section class="section services" id="services">
+      <div class="row container">
+        <div class="col">
+          <h2>Why We’re the Best in Town</h2>
+<p>
+  Order your favorite meals with just a few clicks. We offer fast delivery, top-rated service, and the freshest ingredients to satisfy your cravings anytime.
+</p>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="./images/meat-icon.svg" alt="" />
+            <h3>
+              Browse & <br />
+              Choose Your <br />
+              Meal
+            </h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="./images/delivery-icon.svg" alt="" />
+            <h3>
+              Fast Delivery <br />
+              Right to Your <br />
+              Doorstep
+            </h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="./images/phone-icon.svg" alt="" />
+            <h3>
+              400+ Happy Customers <br />
+              With 5-Star Ratings
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== About ===============-->
+    <section class="section about" id="about">
+      <div class="row container">
+        <div class="col">
+          <img src="./images/delivery-guy-2.svg" alt="" />
+        </div>
+        <div class="col">
+          <h2>What Makes Us Your Favorite Food Partner</h2>
+          <p>
+            We’re here to serve deliciousness with convenience. Whether you're at home or work, our platform brings the best meals from your local favorites to your table.
+          </p>
+          <div class="d-grid">
+            <div class="card">
+              <img src="./images/car-icon.svg" alt="" />
+              <h4>Free Home Delivery</h4>
+<span>On orders over 1000</span>
+            </div>
+            <div class="card">
+              <img src="./images/dollar-icon.svg" alt="" />
+              <h4>Easy Refunds</h4>
+              <span>Money-back guarantee, no hassle</span>
+            </div>
+            <div class="card">
+              <img src="./images/security-icon.svg" alt="" />
+              <h4>Secure Payments</h4>
+              <span>Your data & transactions are protected</span>
+            </div>
+            <div class="card">
+              <img src="./images/time-icon.svg" alt="" />
+              <h4>24/7 Support</h4>
+              <span>We’re always here to help</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== Recipes ===============-->
+    <section class="section recipes" id="recipes">
+      <h2>Menu Made for You</h2>
+      <div class="row container">
+        <div class="filters d-flex">
+          <span data-filter="All Product">See All Product</span>
+          <span data-filter="Fast Food">Fast Food</span>
+          <span data-filter="Desi">Desi Menu</span>
+          <span data-filter="Chinese">Chinese Menu</span>
+          <span data-filter="Noodles">Pasta</span>
+          <span data-filter="Desserts">Desserts</span>
+          <span data-filter="Drinks">Drinks</span>
+          <span data-filter="Pizza">Pizza</span>
+        </div>
+        <div class="products">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="products-wrapper">
+              <!-- <div class="swiper-slide">
+                <div class="card">
+                  <div class="image"><img src="./images/meat-2.svg" alt=""></div>
+                  <div class="rating">
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  </div>
+                  <h4>Crispy Fried Chicken</h4>
+                  <div class="price">
+                    <span>Price</span><span class="color">$13.00</span>
+                  </div>
+                  <div class="button">Add To Cart+</div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="pagination">
+            <div class="custom-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!--=============== Testimonials ===============-->
+    <section class="section testimonials" id="testimonials">
+      <div class="row container">
+        <div class="col">
+          <div class="card" data-filter="raza">
+            <div class="d-flex">
+              <div class="image">
+                <img src="./images/profile-1.jpg" alt="" />
+              </div>
+              <div>
+                <h4>Raza Khan</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="sara">
+            <div class="d-flex">
+              <div class="image">
+                <img src="./images/profile-2.jpg" alt="" />
+              </div>
+              <div>
+                <h4>Sara Ali</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="humna">
+            <div class="d-flex">
+              <div class="image">
+                <img src="./images/profile-3.jpg" alt="" />
+              </div>
+              <div>
+                <h4>Humna Raza</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="ali">
+            <div class="d-flex">
+              <div class="image">
+                <img src="./images/profile-4.jpg" alt="" />
+              </div>
+              <div>
+                <h4>Ali Hashim</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2>
+            What our Customers <br />
+            <span>are saying?</span>
+          </h2>
+          <div class="test-wrapper">
+            <div class="testimonial active" data-id="rosele">
+              <div class="d-flex">
+                <div>
+                  <h4>Raza Khan</h4>
+                  <span>Marketing Coordinator</span>
+                </div>
+
+                <div class="rating">
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                  <span><i class="bx bxs-star"></i></span>
+                </div>
+              </div>
+
+              <p>
+                “Super convenient and easy to use! I placed an order during my
+                break, and it arrived right on time. The website works smoothly
+                and the whole process was effortless.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=============== App ===============-->
+    <section class="section app">
+      <div class="row container">
+        <div class="col">
+          <div class="circle">
+            <div class="inner-circle">
+              <img src="./images/laptop2.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2>
+            Order Your Favorite Meals Online – Delivered Straight to Your
+            Doorstep
+          </h2>
+          <p>
+            Enjoy restaurant-quality meals at home. Order online through our
+            website — fast, fresh, and fuss-free!
+          </p>
+          <div class="d-flex">
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--===== CONTACT =====-->
+<section class="contact section" id="contact">
+  <h2 class="section-title">Share Your Thoughts</h2>
+
+  <div class="contact__container bd-grid">
+      <form action="" class="contact__form" id="reviewForm">
+          <div class="contact__inputs">
+              <input type="text" id="name" placeholder="Name" class="contact__input">
+              <input type="email" id="email_id" placeholder="Email" class="contact__input">
+          </div>
+
+          <textarea id="message" cols="0" rows="10" class="contact__input" placeholder="Your message"></textarea>
+
+          <input type="submit" id="send" onclick="savemail" value="Send" class="contact__button">
+      </form>
+  </div>
+</section>
+
+
+    <!--=============== Footer ===============-->
+    <footer class="footer" id="contact">
+      <div class="row container">
+        <div class="col">
+          <div class="logo d-flex">
+            <img src="./images/logo.png" alt="logo" />
+          </div>
+          <p>
+            Retail food delivery is a courier service in which a restaurant,
+            store, or independent food-delivery
+          </p>
+          <div class="icons d-flex">
+            <div class="icon d-flex">
+              <i class="bx bxl-facebook"></i>
+            </div>
+            <div class="icon d-flex"><i class="bx bxl-twitter"></i></div>
+            <div class="icon d-flex"><i class="bx bxl-linkedin"></i></div>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <h4>Company</h4>
+            <a href="">About Us</a>
+            <a href="">Blog</a>
+            <a href="">All Products</a>
+            <a href="">Locations Map</a>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <a href="">Order tracking</a>
+            <a href="">Wish List</a>
+            <a href="">My account</a>
+            <a href="">Terms & Conditions</a>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <a href="">FAQ</a>
+            <a href="">Policy </a>
+            <a href="">Business</a>
+            <a href="">Support Carrer</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="">WhatsApp</a>
+            <a href="">Support 24 </a>
+            <a href="">Quick Chat</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <div class="row container d-flex">
+        <p>Copyright © 2025</p>
+      </div>
+    </div>
+
+
+<!--=============== Email JS ===============-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your public key
+  (function() {
+    emailjs.init("WM_z13fkL_totKv64");
+  })();
+
+  // Attach submit listener to the form
+  document.getElementById("reviewForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('default_service', 'template_52icps8', this)
+      .then(() => {
+        alert("Thank you! Your review has been sent.");
+        this.reset(); // Clear form after success
+      }, (error) => {
+        alert("Oops... something went wrong!");
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+emailjs.init('WM_z13fkL_totKv64')</script>
+
+
+
+
+    <!--=============== Swiper JS ===============-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--=============== Custom JS ===============-->
+    <script src="./js/testimonial.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/27/11/20250427113140-6WBP8M4L.js"></script>
+  </body>
+</html>
