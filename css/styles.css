@@ -294,6 +294,9 @@ img {
 .col{
   margin-top: 2px;
 }
+#colimg img {
+  margin-top: 60px;
+}
 .header .home {
   height: calc(100vh - 8.5rem);
 }
