@@ -1165,3 +1165,56 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+
+
+/* ========== Mobile Styles =========== */
+@media (max-width: 768px) {
+    body {
+        font-size: 1.4rem; /* Adjust base font size */
+    }
+
+    h1 {
+        font-size: 3.5rem; /* Adjust heading sizes */
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 0.5rem; /* Adjust navbar padding */
+    }
+
+    .navbar .nav-list {
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    .header .home {
+        height: auto; /* Allow height to adjust */
+        padding: 2rem; /* Add padding */
+    }
+
+    .services .row {
+        grid-template-columns: 1fr; /* Stack service items */
+    }
+
+    .about .row {
+        grid-template-columns: 1fr; /* Stack about section items */
+    }
+
+    .contact__inputs {
+        flex-direction: column; /* Stack contact inputs */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer items */
+    }
+
+    /* Additional styles can be added here */
+}
+
