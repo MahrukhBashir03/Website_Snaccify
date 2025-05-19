@@ -114,6 +114,46 @@
       text-decoration: underline;
     }
 
+    .payment-section {
+      background-color: var(--white-color);
+      padding: 2rem;
+      margin-top: 3rem;
+      border-radius: 1rem;
+      box-shadow: var(--box-shadow);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .payment-section h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .payment-option {
+      margin-bottom: 1.2rem;
+    }
+
+    .card-details {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    input, select {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 0.4rem;
+      border: 1px solid #ccc;
+    }
+
     @media (max-width: 768px) {
       .cart-item {
         flex-direction: column;
@@ -124,7 +164,7 @@
         width: 100%;
       }
 
-      button {
+      button, input, select {
         width: 100%;
       }
     }
@@ -135,23 +175,54 @@
   <div id="cart-container"></div>
   <h2 id="total-amount"></h2>
   <button onclick="clearCart()">🗑️ Clear Cart</button>
+  <div class="payment-section" id="payment-section" style="display:none;">
+    <h3>Choose Payment Method</h3>
+    <div class="payment-option">
+      <label><input type="radio" name="payment" value="card" onchange="togglePayment()"> Pay by Card</label>
+      <div class="card-details" id="card-details">
+        <div>
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+        </div>
+        <div>
+          <label for="expiry-date">Expiry Date</label>
+          <input type="text" id="expiry-date" placeholder="MM/YY">
+        </div>
+        <div>
+          <label for="card-type">Card Type</label>
+          <select id="card-type">
+            <option value="">Select</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="debit">Debit</option>
+            <option value="credit">Credit</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="payment-option">
+      <label><input type="radio" name="payment" value="cod" onchange="togglePayment()"> Cash on Delivery</label>
+    </div>
+    <button onclick="checkout()">✅ Confirm Order</button>
+  </div>
   <a href="index.html">← Back to Products</a>
 
   <script>
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartContainer = document.getElementById("cart-container");
     const totalAmount = document.getElementById("total-amount");
-  
+    const paymentSection = document.getElementById("payment-section");
+
     if (cart.length === 0) {
       cartContainer.innerHTML = "<p style='text-align:center; font-size:1.3rem;'>🛒 Your cart is empty.</p>";
     } else {
       let total = 0;
-  
+
       cart.forEach(item => {
         const numericPrice = parseFloat(item.price.replace(/[^\d.]/g, ""));
         const itemTotal = numericPrice * (item.quantity || 1);
         total += itemTotal;
-  
+
         cartContainer.innerHTML += `
           <div class="cart-item">
             <img src="${item.url}" alt="${item.title}">
@@ -164,24 +235,44 @@
           </div>
         `;
       });
-  
+
       totalAmount.textContent = `Total: Rs ${total.toFixed(2)}`;
-  
-      // Add Checkout button
-      const checkoutBtn = document.createElement("button");
-      checkoutBtn.textContent = "✅ Checkout";
-      checkoutBtn.onclick = () => {
-        alert("🎉 Your order is confirmed!");
-        localStorage.removeItem("cart");
-        window.location.href = "index.html"; // Redirect to homepage
-      };
-      document.body.appendChild(checkoutBtn);
+      paymentSection.style.display = "block";
     }
-  
+
     function clearCart() {
       localStorage.removeItem("cart");
       location.reload();
     }
+
+    function togglePayment() {
+      const cardDetails = document.getElementById("card-details");
+      const selected = document.querySelector('input[name="payment"]:checked').value;
+      cardDetails.style.display = selected === "card" ? "flex" : "none";
+    }
+
+    function checkout() {
+      const selected = document.querySelector('input[name="payment"]:checked');
+      if (!selected) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+      if (selected.value === "card") {
+        const cardNumber = document.getElementById("card-number").value.trim();
+        const expiry = document.getElementById("expiry-date").value.trim();
+        const type = document.getElementById("card-type").value;
+
+        if (!cardNumber || !expiry || !type) {
+          alert("Please fill in all card details.");
+          return;
+        }
+      }
+
+      alert("🎉 Your order is confirmed!");
+      localStorage.removeItem("cart");
+      window.location.href = "index.html";
+    }
   </script>
-  </body>
+</body>
 </html>
