@@ -175,6 +175,7 @@
   <div id="cart-container"></div>
   <h2 id="total-amount"></h2>
   <button onclick="clearCart()">🗑️ Clear Cart</button>
+
   <div class="payment-section" id="payment-section" style="display:none;">
     <h3>Choose Payment Method</h3>
     <div class="payment-option">
@@ -186,7 +187,7 @@
         </div>
         <div>
           <label for="expiry-date">Expiry Date</label>
-          <input type="text" id="expiry-date" placeholder="MM/YY">
+          <input type="month" id="expiry-date">
         </div>
         <div>
           <label for="card-type">Card Type</label>
@@ -205,6 +206,7 @@
     </div>
     <button onclick="checkout()">✅ Confirm Order</button>
   </div>
+
   <a href="index.html">← Back to Products</a>
 
   <script>
@@ -265,6 +267,29 @@
 
         if (!cardNumber || !expiry || !type) {
           alert("Please fill in all card details.");
+          return;
+        }
+
+        const today = new Date();
+        const expiryDate = new Date(expiry + "-01");
+        expiryDate.setMonth(expiryDate.getMonth() + 1);
+
+        if (expiryDate <= today) {
+          alert("Expiry date must be in the future.");
+          return;
+        }
+
+        const cardPatterns = {
+          visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+          mastercard: /^5[1-5][0-9]{14}$/,
+          debit: /^6[0-9]{15}$/,
+          credit: /^[3-5][0-9]{14,15}$/
+        };
+
+        const cleanedCard = cardNumber.replace(/\s+/g, '');
+
+        if (!cardPatterns[type].test(cleanedCard)) {
+          alert(`Card number doesn't match the selected card type (${type}).`);
           return;
         }
       }
