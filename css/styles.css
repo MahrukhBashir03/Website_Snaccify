@@ -1,5 +1,6 @@
 /* ========== Google Fonts =========== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 /* ========== CSS Variables =========== */
 :root {
   --primary-color: #ff8300; /* Orange */
@@ -307,7 +308,7 @@ img {
   height: 100%;
 }
 .header .home .row .faster {
-  width: 22rem;
+  width: 27rem;
   background-color: #df362d;
   color: var(--white-color);
   font-size: 1.8rem;
@@ -401,9 +402,67 @@ img {
   }
 }
 
+.deals{
+  background-color: #f9f3e4;
+  padding:30px;
+}
+.headingg{
+  text-align: center;
+  margin-top: 10px;
+}
 
+.surprise {
+  padding: 15px;
+  background-color: #e1640a;
+  color: #e6e6e6;
+  font-weight: 800;
+  border-radius: 10px;
+  display: block;
+  margin: 30px auto; /* Center horizontally + spacing */
 
+}
+.surprise:hover {
+  background-color: #b34700;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(208, 90, 5, 0.6);
+}
+.deal-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* align cards at the top */
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.total{
+  margin: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-size: medium;
+}
 
+/* Equal card size */
+.item-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 220px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Equal image size */
+.item-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 
 
@@ -501,6 +560,7 @@ img {
   color: var(--default-color);
   font-size: 4rem;
   cursor: pointer;
+
 }
 
 /* ========== Services =========== */
