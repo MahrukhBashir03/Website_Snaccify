@@ -8,9 +8,9 @@
     <link rel="shortcut icon" href="./images/icon1.png" type="image/png" />
     <!--=============== Swiper CSS ===============-->
     <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <!--=============== Boxicons ===============-->
     <link
       href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="./css/styles.css" />
     
     <title>Snaccify</title>
-    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/04/27/11/20250427113140-6WBP8M4L.js"></script>    
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/27/11/20250427113140-6WBP8M4L.js"></script>   
   </head>
   <body>
     <!--=============== Header ===============-->
@@ -37,6 +37,7 @@
             <a href="#home">Home</a>
             <a href="#services">About</a>
             <a href="#about">Services</a>
+            <a href="#deals">Deals</a>
             <a href="#recipes">Food</a>
             <a href="#testimonials">Reviews</a>
             <!-- <a href="">Recipes</a> -->
@@ -49,12 +50,12 @@
               <input type="search" placeholder="Search your item" />
               <button class="d-flex"><i class="bx bx-search"></i></button>
             </form>
-            <a href="cart.html" class="cart-icon d-flex">
+            <a href="" class="cart-icon d-flex">
               <i class="bx bx-shopping-bag"></i>
               <span id="cart-count">0</span>
             </a>
             
-            <a class="btn signin">Sign In</a>
+            <a class="btn signin" href="cart.html">View Your Cart</a>
           </div>
 
           <!-- Hamburger -->
@@ -75,7 +76,7 @@
         <div class="row container">
           <div class="col">
             <div class="faster">
-              More than Faster
+              Deliciously Delivered
               <div class="image d-flex">
                 <img src="./images/icon1.png" alt="" />
               </div>
@@ -98,7 +99,7 @@
       </div>
 
       <!--=============== SignIn Form ===============-->
-      <div class="wrapper">
+      <!-- <div class="wrapper">
         <form action="" class="form">
           <h2>SIGN IN</h2>
 
@@ -124,8 +125,11 @@
         <div class="close-form">
           <i class="bx bx-x"></i>
         </div>
-      </div>
+      </div> -->
     </header>
+
+
+    
 
     <!--=============== Services ===============-->
     <section class="section services" id="services">
@@ -205,6 +209,14 @@
       </div>
     </section>
 
+<!--=============== deals ===============-->
+<div class="deals" id="deals">
+    <h1 class="headingg">Surprise Me With Combo Deal!</h1>
+  <button class="surprise" onclick="showSurpriseDeal()" >Surprise Me!</button>
+
+  <div id="deal" class="deal-container"></div>
+  <div id="total" class="total"></div>
+  </div>
     <!--=============== Recipes ===============-->
     <section class="section recipes" id="recipes">
       <h2>Menu Made for You</h2>
@@ -212,8 +224,8 @@
         <div class="filters d-flex">
           <span data-filter="All Product">See All Product</span>
           <span data-filter="Fast Food">Fast Food</span>
-          <span data-filter="Desi">Desi Menu</span>
-          <span data-filter="Chinese">Chinese Menu</span>
+          <span data-filter="Desi">Desi</span>
+          <span data-filter="Chinese">Chinese</span>
           <span data-filter="Noodles">Pasta</span>
           <span data-filter="Desserts">Desserts</span>
           <span data-filter="Drinks">Drinks</span>
@@ -247,9 +259,6 @@
         </div>
       </div>
     </section>
-
-
-
 
 
     <!--=============== Testimonials ===============-->
@@ -413,7 +422,7 @@
             <a href="">FAQ</a>
             <a href="">Policy </a>
             <a href="">Business</a>
-            <a href="">Support Carrer</a>
+            <a href="">Support Career</a>
           </div>
           <div>
             <h4>Contact</h4>
@@ -454,6 +463,69 @@
   });
 </script>
 
+
+<!-- DEALS JS -->
+<script>
+  const products = [
+    { "title": "Sausage Pasta", "price": "Rs 650", "url": "./images/SausagePasta.png", "category": "Noodles" },
+    { "title": "Tacos", "price": "Rs 635", "url": "./images/tacos.png", "category": "Fast Food" },
+    { "title": "Chocolate Cookies", "price": "Rs 260", "url": "./images/cookies.png", "category": "Desserts" },
+    { "title": "Oreo Shake", "price": "Rs 680", "url": "./images/oreoshake.png", "category": "Drinks" },
+    { "title": "Chicken Biryani", "price": "Rs 500", "url": "./images/biryani.png", "category": "Desi" },
+    { "title": "Ice Cream", "price": "Rs 300", "url": "./images/icecream.jpg", "category": "Desserts" },
+    { "title": "Soft Drinks", "price": "Rs 120", "url": "./images/softdrinks.jpg", "category": "Drinks" },
+    { "title": "Beef Burger", "price": "Rs 1050", "url": "./images/burger.jpg", "category": "Fast Food" }
+  ];
+
+  function getRandomByCategory(category) {
+    const filtered = products.filter(item => item.category === category);
+    return filtered.length ? filtered[Math.floor(Math.random() * filtered.length)] : null;
+  }
+
+  function extractPrice(price) {
+    return parseInt(price.replace(/[^\d]/g, ''));
+  }
+
+  function showSurpriseDeal() {
+    const mains = ['Noodles', 'Fast Food', 'Desi'];
+    const mainItem = getRandomByCategory(mains[Math.floor(Math.random() * mains.length)]);
+    const drink = getRandomByCategory('Drinks');
+    const dessert = getRandomByCategory('Desserts');
+
+    const items = [mainItem, drink, dessert];
+    if (items.includes(null)) {
+      alert("Some category has no items!");
+      return;
+    }
+
+    const dealDiv = document.getElementById("deal");
+    const totalDiv = document.getElementById("total");
+    dealDiv.innerHTML = "";
+
+    let totalPrice = 0;
+
+    items.forEach(item => {
+      totalPrice += extractPrice(item.price);
+
+      const card = document.createElement("div");
+      card.className = "item-card";
+      card.innerHTML = `
+        <img src="${item.url}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.price}</p>
+        <small>${item.category}</small>
+      `;
+      dealDiv.appendChild(card);
+    });
+
+    totalDiv.textContent = `Total Deal Price: Rs ${totalPrice}`;
+  }
+
+  // expose to global so onclick works
+  window.showSurpriseDeal = showSurpriseDeal;
+</script>
+
+
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
@@ -465,6 +537,23 @@ emailjs.init('WM_z13fkL_totKv64')</script>
 
     <!--=============== Swiper JS ===============-->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Your JS -->
+    <script src="./js/products.js" defer></script>
+
+    <!-- Load Swiper JS from CDN BEFORE your products.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Your custom script -->
+    <script src="js/products.js" defer></script>
+
+
 
     <!--=============== Custom JS ===============-->
     <script src="./js/testimonial.js"></script>
