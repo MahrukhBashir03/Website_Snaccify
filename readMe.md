@@ -1,5 +1,34 @@
-# Responsive Food Delivery Website with HTML, CSS & JavaScript
+# Snaccify 🍔
 
-![Responsive Food Delivery Website with HTML, CSS and JavaScript](![image](https://github.com/user-attachments/assets/b03e9832-fb0f-478b-a363-ca97de0aa5d9)
+Snaccify is a simple and smart food ordering website with a chatbot assistant, payment validation, and live feedback system.
 
- [[website](https://codevoweb.com/lc26-build-food-ordering-website-html-css-javascript](https://nimraiqbal-n.github.io/Website_Snaccify/)
+## 🔧 Features
+
+- Add/remove food items to cart
+- Quantity controls (+ / -)
+- Payment options:
+  - Cash on Delivery
+  - Card Payment with validation (type + expiry)
+- Chatbot help (Botpress)
+- Live feedback using EmailJS
+- Responsive design
+
+## 🛠️ Tech Used
+
+- HTML, CSS, JavaScript
+- Botpress (chatbot)
+- EmailJS (feedback emails)
+- LocalStorage (cart)
+
+## ▶️ How to Run
+
+1. Clone or download the project  
+2. Open `index.html` in your browser  
+3. Use Live Server for best experience
+
+## 🚀 Future Plans
+
+- Login/Register system  
+- Save orders with a backend  
+- Admin panel for products  
+- Real payment integration
